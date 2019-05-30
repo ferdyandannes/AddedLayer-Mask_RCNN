@@ -983,31 +983,31 @@ def build_fpn_mask_graph(rois, feature_maps, image_meta,
 
 
     #########################
-    # x = KL.TimeDistributed(KL.Conv2D(256, (3, 3), padding="same"),
-    #                        name="mrcnn_mask_conv2")(x)
-    # x = KL.TimeDistributed(BatchNorm(),
-    #                        name='mrcnn_mask_bn2')(x, training=train_bn)
-    # x = KL.Activation('relu')(x)
+    x = KL.TimeDistributed(KL.Conv2D(256, (3, 3), padding="same"),
+                           name="mrcnn_mask_conv2")(x)
+    x = KL.TimeDistributed(BatchNorm(),
+                           name='mrcnn_mask_bn2')(x, training=train_bn)
+    x = KL.Activation('relu')(x)
 
-    # x = KL.TimeDistributed(KL.Conv2D(256, (3, 3), padding="same"),
-    #                        name="mrcnn_mask_conv3")(x)
-    # x = KL.TimeDistributed(BatchNorm(),
-    #                        name='mrcnn_mask_bn3')(x, training=train_bn)
-    # x = KL.Activation('relu')(x)
+    x = KL.TimeDistributed(KL.Conv2D(256, (3, 3), padding="same"),
+                           name="mrcnn_mask_conv3")(x)
+    x = KL.TimeDistributed(BatchNorm(),
+                           name='mrcnn_mask_bn3')(x, training=train_bn)
+    x = KL.Activation('relu')(x)
 
     #########################
 
-    # x = KL.TimeDistributed(KL.Conv2D(256, (3, 3), padding="same"),
-    #                        name="mrcnn_mask_conv3_add1")(x)
-    # x = KL.TimeDistributed(BatchNorm(),
-    #                        name='mrcnn_mask_bn3_add1')(x, training=train_bn)
-    # x = KL.Activation('relu')(x)
+    x = KL.TimeDistributed(KL.Conv2D(256, (3, 3), padding="same"),
+                           name="mrcnn_mask_conv3_add1")(x)
+    x = KL.TimeDistributed(BatchNorm(),
+                           name='mrcnn_mask_bn3_add1')(x, training=train_bn)
+    x = KL.Activation('relu')(x)
 
-    # x = KL.TimeDistributed(KL.Conv2D(256, (3, 3), padding="same"),
-    #                        name="mrcnn_mask_conv3_add2")(x)
-    # x = KL.TimeDistributed(BatchNorm(),
-    #                        name='mrcnn_mask_bn3_add2')(x, training=train_bn)
-    # x = KL.Activation('relu')(x)
+    x = KL.TimeDistributed(KL.Conv2D(256, (3, 3), padding="same"),
+                           name="mrcnn_mask_conv3_add2")(x)
+    x = KL.TimeDistributed(BatchNorm(),
+                           name='mrcnn_mask_bn3_add2')(x, training=train_bn)
+    x = KL.Activation('relu')(x)
 
     ###############################
 
